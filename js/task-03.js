@@ -12,3 +12,60 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
+/// 1 variant for
+// const arrLi = [];
+
+// for (const image of images) {
+//   const liEl = document.createElement("li");
+//   arrLi.push(liEl);
+//   liEl.classList.add("gallery-item");
+//   console.log(liEl);
+
+//   const imgEl = document.createElement("img");
+//   imgEl.classList.add("gallery-img");
+//   console.log(image.url);
+//   imgEl.url = image.url;
+//   imgEl.alt = image.alt;
+//   console.log(imgEl);
+//   console.log(liEl);
+//   liEl.appendChild(imgEl);
+// }
+// const ulEl = document.querySelector(".gallery");
+// ulEl.append(...arrLi);
+
+//----------2 variant map
+// const makeItemOptions = (options) => {
+//   return options.map((option) => {
+//     const liEl = document.createElement("li");
+//     // arrLi.push(liEl)
+//     liEl.classList.add("gallery-item");
+
+//     const imgEl = document.createElement("img");
+//     imgEl.classList.add("gallery-img");
+//     imgEl.src = option.url;
+//     imgEl.alt = option.alt;
+//     liEl.appendChild(imgEl);
+
+//     return liEl;
+//   });
+// };
+
+// const elements = makeItemOptions(images);
+// console.log(elements);
+// const ulEl = document.querySelector(".gallery");
+
+// ulEl.append(...elements);
+
+const makeItemOptions = (options) => {
+  return options.map((option) => {
+    const imgEl = `<li class="gallery-item"><img src=${option.url} alt=${option.alt} class="gallery-img"></li>`;
+    return imgEl;
+  });
+};
+
+const elements = makeItemOptions(images);
+console.log(elements);
+const ulEl = document.querySelector(".gallery");
+
+ulEl.insertAdjacentHTML("beforeend", elements.join(""));
