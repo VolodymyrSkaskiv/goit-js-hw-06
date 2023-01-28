@@ -23,6 +23,7 @@ function onInputNumber() {
 }
 function createDivs() {
   createBoxes(count);
+  count = 0;
   refs.input.value = 0;
   arrCreateDiv.length = 0;
 }
