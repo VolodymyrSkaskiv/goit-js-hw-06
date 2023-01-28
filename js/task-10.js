@@ -21,6 +21,11 @@ refs.btnDestroy.addEventListener("click", destroyBoxes);
 function onInputNumber() {
   return (count = Number(refs.input.value));
 }
+
+function destroyBoxes() {
+  refs.divBoxes.innerHTML = "";
+}
+
 function createDivs() {
   createBoxes(count);
   count = 0;
@@ -36,14 +41,8 @@ function createBoxes(amount) {
     const boxSize = i * 10 + 30;
     refsDiv.textContent = i + 1;
     refsDiv.style.width = `${boxSize}px`;
-    refsDiv.style.hight = `${boxSize}px`;
+    refsDiv.style.height = `${boxSize}px`;
     refsDiv.style.backgroundColor = getRandomHexColor();
   }
   refs.divBoxes.append(...arrCreateDiv);
-  console.log("createBoxes");
-  console.log(refs.divBoxes.innerHTML);
-}
-
-function destroyBoxes() {
-  refs.divBoxes.innerHTML = "";
 }
