@@ -11,31 +11,12 @@
 
 const numberOfCategories = document.querySelectorAll("h2");
 console.log("Number of categories: ", numberOfCategories.length);
-
 const ul = document.querySelector("#categories");
 
-const animals = ul.children[0].children[0].textContent;
-console.log("Category:", animals);
+for (let i = 0; i < numberOfCategories.length; i += 1) {
+  const categoryEl = ul.children[i].firstElementChild.textContent;
+  const elemCount = ul.children[i].lastElementChild.children.length;
 
-//2 variant
-// const animals = ul.firstElementChild.firstElementChild.textContent;
-// console.log("Category:", animals);
-
-const animalsCount = ul.children[0].children[1].children.length;
-console.log("Elements:", animalsCount);
-
-const products = ul.children[1].children[0].textContent;
-console.log("Category:", products);
-
-const productsCount = ul.children[1].children[1].children.length;
-console.log("Elements:", productsCount);
-
-// const technologies = ul.children[2].children[0].textContent;
-// console.log("Category:", technologies);
-
-//2 variant
-const technologies = ul.lastElementChild.firstElementChild.textContent;
-console.log("Category:", technologies);
-
-const technologiesCount = ul.children[2].children[1].children.length;
-console.log("Elements:", technologiesCount);
+  console.log("Category:", categoryEl);
+  console.log("Elements:", elemCount);
+}
